@@ -1,0 +1,38 @@
+# 1 - Kullanıcıdan alacağınız bir sayının çift sayı olup olmadığını kontrol edip ekrana sayı
+# çiftse çift, çift değilse tek yazdırın. (Kullanıcıdan sayı almak için input fonksiyonuna
+# bakabilirsiniz :))
+
+x = int(input("x değeri giriniz : "))
+if x % 2 == 0:
+    print("x çift sayıdır.")
+else:
+    print("x tek sayıdır.")
+
+# 2 - Kullanıcıdan alacağınız 5 tane sayının asal olup olmadığını kontrol edip, her bir sayı için
+# ekrana sayı asalsa asal, asal değilse asal değil yazdırın.
+
+for i in range (0,5):
+    x = int(input("x sayısı giriniz : "))
+    if x == 1:
+        print("x asal bir sayı degildir.")
+        break
+    for sayi in range(2,x):
+        if x % sayi == 0:
+            print("x asal bir sayı degildir.")
+            break
+    else:
+        print("x asal bir sayıdır.")
+
+# 3 - Elimizdeki üç adet string içerisindeki rakamlar temizlenip (sadece harfler kalacak) temiz
+# halleri bir listede tutulacaktır. Temiz halde listede bulunan isimlerin hepsi yan yana bir
+# string değişkeninde birleştirilecek ve aralarında (-) işareti olacaktır.
+
+import re
+k = []
+for i in range (1,4):
+    metin = str(input(str(i)+"."+" metin : "))
+    rakam = r'[0-9]'
+    temiz_metin = re.sub(rakam, '', metin)
+    k.append(temiz_metin)
+
+print(str(k[0]+"-"+k[1]+"-"+k[2]))
