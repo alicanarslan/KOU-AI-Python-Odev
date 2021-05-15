@@ -1,0 +1,10 @@
+import re
+with open("odev.txt", "r") as odev:
+    x = odev.readlines()
+
+with open("odev.txt", "w") as odev:
+
+    cikar = r'[-+()?=0-9]'
+    for i in range(len(x)):
+        x[i] = re.sub(cikar, "", x[i])
+    odev.writelines(x)
